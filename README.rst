@@ -57,11 +57,28 @@ Create a database, a collection by its id::
     newdb = docdb.create_db('mynewdb')
     newcoll = docdb.create_collection('mynewdb', 'mynewcoll')
 
+Create a document giving a dictionary::
+
+    data = {'field1': 'value1', 'field2': 'value2'}
+    newdoc = docdb.create_document('mynewdb', 'mynewcoll', data)
+
+Upsert (update or insert) a document::
+
+    doc = docdb.upsert_document('mynewdb', 'mynewcoll', data)
+
 Replace
 ~~~~~~~
+
 Replace a document by modifying the original one::
 
     doc = docdb.get_document('mydb', 'mycoll', 'mydoc')
     doc['type'] = 3
     doc.update(another_dict)
     docdb.replace_document(doc)
+
+Delete
+~~~~~~
+
+Empty a collection by deleting all documents of the collection::
+
+    docdb.empty_documents('mydb', 'mycoll')
