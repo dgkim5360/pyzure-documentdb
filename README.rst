@@ -13,8 +13,9 @@ Using pip::
 Usage
 -----
 
-Credential file is needed. Create credentials.py contains secret things.::
+A credential file containing secret things is needed::
 
+    # credentials.py
     DOCUMENTDB_NAME = 'mydocdb'
     DOCUMENTDB_HOST = 'https://mydocdb.documents.azure.com:443/'
     DOCUMENTDB_KEY = '!@#!@#!@#YOUR_SECRET_KEY!@#!@#!@#'
