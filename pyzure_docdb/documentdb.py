@@ -17,7 +17,11 @@ class DocumentDB(object):
 	def get_document(self, db_id, coll_id, doc_id):
 		coll = self.get_collection(db_id, coll_id)
 		docs = self.client.QueryDocuments(coll['_self'], u'SELECT * FROM {coll} coll WHERE coll.id="{id}"'.format(coll=coll['id'],id=doc_id))
-		return docs.fetch_next_block()[0]
+		doc = docs.fetch_next_block()
+		if doc:
+			return doc[0]
+		else:
+			return None
 	def get_documents(self, db_id, coll_id):
 		coll = self.get_collection(db_id, coll_id)
 		docs = self.client.ReadDocuments(coll['_self'])

@@ -7,7 +7,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
 	name='pyzure-documentdb',
-	version='0.1.0.dev2',
+	version='0.1.0.dev3',
 	author='Don Kim',
 	author_email='dgkim5360@gmail.com',
 	packages=['pyzure_docdb'],

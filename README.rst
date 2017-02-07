@@ -10,6 +10,8 @@ Using pip::
 
     pip install pyzure_documentdb
 
+Note: pydocumentdb requires requests of version 2.10.0
+
 Usage
 -----
 
@@ -39,7 +41,7 @@ Get a single document with a series of id (database - collection - document)::
 
     doc = docdb.get_document('mydb', 'mycoll', 'mydoc')
 
-Or Get all documents::
+Or get all documents::
 
     docs = docdb.get_documents('mydb', 'mycoll')
 
